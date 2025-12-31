@@ -24,7 +24,7 @@ PRODUCT_RELEASE_NAME := umi
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := umi
-PRODUCT_NAME := umi
+PRODUCT_NAME := twrp_umi
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Mi 10
 PRODUCT_MANUFACTURER := Xiaomi
