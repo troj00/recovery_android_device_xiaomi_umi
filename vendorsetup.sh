@@ -17,21 +17,6 @@
 # 	
 # 	Please maintain this if you use this script or any part of it
 #
-FDEVICE="umi"
-
-fox_get_target_device() {
-local chkdev=$(echo "$BASH_SOURCE" | grep -w \"$FDEVICE\")
-   if [ -n "$chkdev" ]; then 
-      FOX_BUILD_DEVICE="$FDEVICE"
-   else
-      chkdev=$(set | grep BASH_ARGV | grep -w \"$FDEVICE\")
-      [ -n "$chkdev" ] && FOX_BUILD_DEVICE="$FDEVICE"
-   fi
-}
-
-if [ -z "$1" -a -z "$FOX_BUILD_DEVICE" ]; then
-   fox_get_target_device
-fi
 
 FOX_MANIFEST_ROOT=$(gettop)
 if [ -f $FOX_MANIFEST_ROOT/bootable/recovery/orangefox_defaults.go -a -f $FOX_MANIFEST_ROOT/bootable/recovery/orangefox.mk ]; then
@@ -41,8 +26,9 @@ if [ -f $FOX_MANIFEST_ROOT/bootable/recovery/orangefox_defaults.go -a -f $FOX_MA
 	fi
 # -- add settings for R11 --
 		export TARGET_ARCH=arm64
-		export FOX_BUILD_DEVICE="umi"
+		export FOX_BUILD_DEVICE=umi
 		export TARGET_DEVICE_ALT="umi"
+		export FOX_TARGET_DEVICES="umi"
 		export FOX_BUILD_TYPE=Stable
 		export OF_SCREEN_H=2340
 		#export OF_STATUS_H=80
