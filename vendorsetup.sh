@@ -43,6 +43,7 @@ if [ -f $FOX_MANIFEST_ROOT/bootable/recovery/orangefox_defaults.go -a -f $FOX_MA
 # -- add settings for R11 --
 		export TARGET_ARCH=arm64
 #		export FOX_BUILD_DEVICE=umi
+		export FOX_DEVICE="umi"
 		export TARGET_DEVICE_ALT="umi"
 #		export FOX_TARGET_DEVICES="umi"
 		export FOX_BUILD_TYPE=Stable
