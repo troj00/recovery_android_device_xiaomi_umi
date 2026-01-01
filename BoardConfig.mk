@@ -13,6 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+# Broken rules
+BUILD_BROKEN_DUP_RULES := true
 
 # Architecture
 TARGET_ARCH := arm64
@@ -123,7 +125,7 @@ TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 # Crypto
 BOARD_USES_QCOM_FBE_DECRYPTION := true
 BOARD_USES_METADATA_PARTITION := true
-PLATFORM_VERSION := 13
+PLATFORM_VERSION := 12
 PLATFORM_VERSION_LAST_STABLE := $(PLATFORM_VERSION)
 PLATFORM_SECURITY_PATCH := 2099-12-31
 VENDOR_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
@@ -157,14 +159,14 @@ TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel0-backlight/brightness"
 TW_CUSTOM_CPU_TEMP_PATH := "/sys/devices/virtual/thermal/thermal_zone19/temp"
 TW_MAX_BRIGHTNESS := 2047
 TW_DEFAULT_BRIGHTNESS := 300
-TW_DEFAULT_LANGUAGE := RU
+TW_DEFAULT_LANGUAGE := ru
 TW_STATUS_ICONS_ALIGN := center
 TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
 TW_NO_SCREEN_BLANK := true
 TW_HAS_EDL_MODE := false
 TW_SUPPORT_INPUT_AIDL_HAPTICS :=true
-TW_BACKUP_EXCLUSIONS := /data/fonts
+TW_BACKUP_EXCLUSIONS := /data/fonts;/data/adb/ksu
 TW_FRAMERATE := 90
 TW_Y_OFFSET := 90
 TW_H_OFFSET := -90
