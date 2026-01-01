@@ -17,6 +17,22 @@
 # 	
 # 	Please maintain this if you use this script or any part of it
 #
+FDEVICE="umi"
+#set -o xtrace
+
+fox_get_target_device() {
+local chkdev=$(echo "$BASH_SOURCE" | grep -w $FDEVICE)
+   if [ -n "$chkdev" ]; then 
+      FOX_BUILD_DEVICE="$FDEVICE"
+   else
+      chkdev=$(set | grep BASH_ARGV | grep -w $FDEVICE)
+      [ -n "$chkdev" ] && FOX_BUILD_DEVICE="$FDEVICE"
+   fi
+}
+
+if [ -z "$1" -a -z "$FOX_BUILD_DEVICE" ]; then
+   fox_get_target_device
+fi
 
 FOX_MANIFEST_ROOT=$(gettop)
 if [ -f $FOX_MANIFEST_ROOT/bootable/recovery/orangefox_defaults.go -a -f $FOX_MANIFEST_ROOT/bootable/recovery/orangefox.mk ]; then
@@ -26,15 +42,17 @@ if [ -f $FOX_MANIFEST_ROOT/bootable/recovery/orangefox_defaults.go -a -f $FOX_MA
 	fi
 # -- add settings for R11 --
 		export TARGET_ARCH=arm64
-		export FOX_BUILD_DEVICE=umi
+#		export FOX_BUILD_DEVICE=umi
 		export TARGET_DEVICE_ALT="umi"
-		export FOX_TARGET_DEVICES="umi"
+#		export FOX_TARGET_DEVICES="umi"
 		export FOX_BUILD_TYPE=Stable
 		export OF_SCREEN_H=2340
 		#export OF_STATUS_H=80
 		export OF_STATUS_INDENT_LEFT=20
 		export OF_STATUS_INDENT_RIGHT=20
 		export FOX_REPLACE_TOOLBOX_GETPROP=1
+		export FOX_REPLACE_BUSYBOX_PS=1
+		export FOX_USE_RESETPROP_BINARY=1
 		#export OF_USE_LZMA_COMPRESSION=1
 		#export OF_USE_LZ4_COMPRESSION=1
 		export FOX_USE_ZIP_BINARY=1
@@ -67,7 +85,8 @@ if [ -f $FOX_MANIFEST_ROOT/bootable/recovery/orangefox_defaults.go -a -f $FOX_MA
 		export FOX_DELETE_AROMAFM=0
 		export OF_USE_GREEN_LED=0
 		export OF_FLASHLIGHT_ENABLE=1
-		export OF_MAINTAINER=Alex_Troj
+		export OF_MAINTAINER="Alex_Troj"
+		export FOX_VERSION="R12.1"
 		export OF_HIDE_NOTCH=1
 		export OF_CLOCK_POS=0
 		export OF_ALLOW_DISABLE_NAVBAR=0
@@ -101,7 +120,7 @@ if [ -f $FOX_MANIFEST_ROOT/bootable/recovery/orangefox_defaults.go -a -f $FOX_MA
 		export FOX_VARIANT=MIUI
 		export OF_FORCE_PREBUILT_KERNEL=1
 		export OF_SKIP_DECRYPTED_ADOPTED_STORAGE=0
-		#export OF_ENABLE_LPTOOLS=0
+		export OF_ENABLE_LPTOOLS=1
 		export OF_ENABLE_ALL_PARTITION_TOOLS=1
 		export FOX_PATCH_VBMETA_FLAG=0
 		export OF_FIX_DECRYPTION_ON_DATA_MEDIA=0
@@ -109,8 +128,8 @@ if [ -f $FOX_MANIFEST_ROOT/bootable/recovery/orangefox_defaults.go -a -f $FOX_MA
 		export OF_ENABLE_FS_COMPRESSION=1
 		export OF_MANUAL_ROOT_VENDOR_ERROR_FIX=1
 		export OF_LOOP_DEVICE_ERRORS_TO_LOG=1
-		export FOX_SETTINGS_ROOT_DIRECTORY=/persist/OFRP
-		export FOX_MISCELLANEOUS_ROOT_DIRECTORY=/sdcard
+		export FOX_SETTINGS_ROOT_DIRECTORY="/persist/OFRP"
+		export FOX_MISCELLANEOUS_ROOT_DIRECTORY="/sdcard"
 		export FOX_ALLOW_EARLY_SETTINGS_LOAD=1
 		export FOX_BASH_TO_SYSTEM_BIN=1
 		export OF_UNBIND_SDCARD_F2FS=1
