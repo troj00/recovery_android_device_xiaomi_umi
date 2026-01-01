@@ -131,7 +131,7 @@ if [ -f $FOX_MANIFEST_ROOT/bootable/recovery/orangefox_defaults.go -a -f $FOX_MA
 		export FOX_ENABLE_KERNELSU_NEXT_SUPPORT=0
 		export FOX_ENABLE_SUKISU_SUPPORT=1
 		export OF_ENABLE_FRP_ADDON=1
-		export FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER=1
+		#export FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER=1
 		export OF_KEEP_FORCED_ENCRYPTION=1
 # -- end R11 settings --
 
