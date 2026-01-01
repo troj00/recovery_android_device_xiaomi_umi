@@ -87,7 +87,6 @@ if [ -f $FOX_MANIFEST_ROOT/bootable/recovery/orangefox_defaults.go -a -f $FOX_MA
 		export OF_USE_GREEN_LED=0
 		export OF_FLASHLIGHT_ENABLE=1
 		export OF_MAINTAINER="Alex_Troj"
-		export FOX_VERSION="R12.1"
 		export OF_HIDE_NOTCH=1
 		export OF_CLOCK_POS=0
 		export OF_ALLOW_DISABLE_NAVBAR=0
