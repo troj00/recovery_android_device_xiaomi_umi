@@ -25,7 +25,7 @@ $(call inherit-product, $(DEVICE_PATH)/device.mk)
 PRODUCT_NAME := twrp_umi
 PRODUCT_DEVICE := umi
 PRODUCT_BRAND := Xiaomi
-PRODUCT_MODEL := Mi 10
+PRODUCT_MODEL := Xiaomi Mi 10
 PRODUCT_MANUFACTURER := Xiaomi
 
 # Release name (optional, can be used in scripts)
