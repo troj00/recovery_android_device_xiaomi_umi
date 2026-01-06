@@ -14,6 +14,9 @@
 # limitations under the License.
 #
 
+# Codename device
+PRODUCT_RELEASE_NAME := umi
+
 # Configure base.mk
 $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
 
