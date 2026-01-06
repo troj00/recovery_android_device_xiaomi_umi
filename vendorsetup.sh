@@ -17,7 +17,7 @@
 # 	
 # 	Please maintain this if you use this script or any part of it
 #
-FDEVICE="umi"
+FDEVICE=umi
 #set -o xtrace
 
 fox_get_target_device() {
@@ -43,8 +43,8 @@ if [ -f $FOX_MANIFEST_ROOT/bootable/recovery/orangefox_defaults.go -a -f $FOX_MA
 # -- add settings for R11 --
 		export TARGET_ARCH=arm64
 #		export FOX_BUILD_DEVICE=umi
-		export FOX_DEVICE="umi"
-		export TARGET_DEVICE_ALT="umi"
+#		export FOX_DEVICE="umi"
+#		export TARGET_DEVICE_ALT="umi"
 #		export FOX_TARGET_DEVICES="umi"
 		export FOX_BUILD_TYPE=Stable
 		export OF_SCREEN_H=2340
