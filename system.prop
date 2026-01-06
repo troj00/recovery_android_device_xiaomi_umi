@@ -2,7 +2,7 @@
 ro.adb.secure=0
 
 # Set device name
-ro.product.model=Mi 10
+ro.product.model=Xiaomi Mi 10
 ro.product.device=umi
 ro.build.product=umi
 
