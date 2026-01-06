@@ -16,18 +16,17 @@
 
 DEVICE_PATH := device/xiaomi/umi
 
-# Inherit common TWRP settings
+# Inherit common TWRP configs
 $(call inherit-product, vendor/twrp/config/common.mk)
-
 # Inherit device.mk
 $(call inherit-product, $(DEVICE_PATH)/device.mk)
 
-# Release name
-PRODUCT_RELEASE_NAME := umi
-
-## Device identifiers — должны быть после всех включений
+# Product definition for building (do not change!)
+PRODUCT_NAME := twrp_umi
 PRODUCT_DEVICE := umi
-PRODUCT_NAME := umi
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Mi 10
 PRODUCT_MANUFACTURER := Xiaomi
+
+# Release name (optional, can be used in scripts)
+PRODUCT_RELEASE_NAME := umi
