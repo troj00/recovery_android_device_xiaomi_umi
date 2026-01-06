@@ -51,9 +51,11 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     TARGET_DEVICE=$(PRODUCT_RELEASE_NAME)
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.product.device=umi \
-    ro.build.product=umi \
+    ro.product.device=$(PRODUCT_RELEASE_NAME) \
+    ro.build.product=$(PRODUCT_RELEASE_NAME) \
     ro.product.model=Mi 10
 
-TWRP_REQUIRED_MODULES += miui_prebuilt \
+# TWRP/OrangeFox обязательные модули
+TWRP_REQUIRED_MODULES += \
+    miui_prebuilt \
     magisk_prebuilt
