@@ -151,7 +151,7 @@ if [ -f $FOX_MANIFEST_ROOT/bootable/recovery/orangefox_defaults.go -a -f $FOX_MA
 		export FOX_ENABLE_SUKISU_SUPPORT=1
 		export OF_ENABLE_FRP_ADDON=1
 		#export FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER=1
-		export OF_KEEP_FORCED_ENCRYPTION=1
+		export OF_KEEP_FORCED_ENCRYPTION=0
 # -- end R11 settings --
 
 	# let's see what are our build VARs
