@@ -51,7 +51,7 @@ if [ -f $FOX_MANIFEST_ROOT/bootable/recovery/orangefox_defaults.go -a -f $FOX_MA
 		#export OF_STATUS_H=80
 		export OF_STATUS_INDENT_LEFT=20
 		export OF_STATUS_INDENT_RIGHT=20
-		export FOX_REPLACE_TOOLBOX_GETPROP=0
+		export FOX_REPLACE_TOOLBOX_GETPROP=1
 		export FOX_REPLACE_BUSYBOX_PS=1
 		export FOX_USE_RESETPROP_BINARY=1
 		#export OF_USE_LZMA_COMPRESSION=1
@@ -65,7 +65,7 @@ if [ -f $FOX_MANIFEST_ROOT/bootable/recovery/orangefox_defaults.go -a -f $FOX_MA
 		export FOX_USE_GREP_BINARY=1
 		export FOX_USE_BUSYBOX_BINARY=1
 		export FOX_USE_FSCK_EROFS_BINARY=1
-		export FOX_USE_PATCHELF_BINARY=0
+		export FOX_USE_PATCHELF_BINARY=1
 		export FOX_REMOVE_ZIP_BINARY=0
 		export FOX_USE_BASH_SHELL=1
 		export FOX_USE_XZ_UTILS=1
@@ -89,7 +89,7 @@ if [ -f $FOX_MANIFEST_ROOT/bootable/recovery/orangefox_defaults.go -a -f $FOX_MA
 		export OF_MAINTAINER="Alex_Troj"
 		export OF_HIDE_NOTCH=1
 		export OF_CLOCK_POS=0
-		export OF_ALLOW_DISABLE_NAVBAR=0
+#		export OF_ALLOW_DISABLE_NAVBAR=1
 		export OF_DONT_KEEP_LOG_HISTORY=0
 		export OF_SKIP_ORANGEFOX_PROCESS=0
 		export FOX_VANILLA_BUILD=0
@@ -150,8 +150,8 @@ if [ -f $FOX_MANIFEST_ROOT/bootable/recovery/orangefox_defaults.go -a -f $FOX_MA
 		export FOX_ENABLE_KERNELSU_NEXT_SUPPORT=0
 		export FOX_ENABLE_SUKISU_SUPPORT=1
 		export OF_ENABLE_FRP_ADDON=1
-		#export FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER=1
-		export OF_KEEP_FORCED_ENCRYPTION=0
+#		export FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER=1
+#		export OF_KEEP_FORCED_ENCRYPTION=0
 		export FOX_USE_SYSTEM_PROP=1
 # -- end R11 settings --
 
