@@ -17,21 +17,17 @@
 # Codename device
 PRODUCT_RELEASE_NAME := umi
 
-# Configure base.mk
+# Inherit common configs
 $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
-
-# Configure core_64_bit_only.mk
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
-
-# Configure twrp
 $(call inherit-product, vendor/twrp/config/common.mk)
 
+# Packages
 PRODUCT_PACKAGES += \
     bootctrl.xiaomi_sm8250.recovery
 
-# SHIPPING API
+# Shipping API
 PRODUCT_SHIPPING_API_LEVEL := 29
-# VNDK API
 PRODUCT_TARGET_VNDK_VERSION := 31
 
 # Soong namespaces
@@ -40,22 +36,18 @@ PRODUCT_SOONG_NAMESPACES += \
 
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
-# otacert
+# OTA / Recovery keys
 PRODUCT_EXTRA_RECOVERY_KEYS += \
     $(DEVICE_PATH)/security/magisk \
     $(DEVICE_PATH)/security/miui_releasekey
 
-# Overrides
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRODUCT_NAME=$(PRODUCT_RELEASE_NAME) \
-    TARGET_DEVICE=$(PRODUCT_RELEASE_NAME)
-
+# Overrides for build.prop (displayed in recovery)
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.product.device=$(PRODUCT_RELEASE_NAME) \
-    ro.build.product=$(PRODUCT_RELEASE_NAME) \
+    ro.product.device=umi \
+    ro.build.product=umi \
     ro.product.model=Mi 10
 
-# TWRP/OrangeFox обязательные модули
+# TWRP required modules
 TWRP_REQUIRED_MODULES += \
     miui_prebuilt \
     magisk_prebuilt
