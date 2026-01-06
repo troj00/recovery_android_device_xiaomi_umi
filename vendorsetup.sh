@@ -51,7 +51,7 @@ if [ -f $FOX_MANIFEST_ROOT/bootable/recovery/orangefox_defaults.go -a -f $FOX_MA
 		#export OF_STATUS_H=80
 		export OF_STATUS_INDENT_LEFT=20
 		export OF_STATUS_INDENT_RIGHT=20
-		export FOX_REPLACE_TOOLBOX_GETPROP=1
+		export FOX_REPLACE_TOOLBOX_GETPROP=0
 		export FOX_REPLACE_BUSYBOX_PS=1
 		export FOX_USE_RESETPROP_BINARY=1
 		#export OF_USE_LZMA_COMPRESSION=1
