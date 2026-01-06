@@ -173,7 +173,6 @@ TW_H_OFFSET := -90
 TW_DEVICE_VERSION := Alex Troj A12_v1
 ALLOW_MISSING_DEPENDENCIES := true
 TARGET_DEVICE := umi
-TARGET_PRODUCT := omni_umi
 FOX_RECOVERY_DEVICES := umi
 # OrangeFox product identity
 FOX_DEVICE := umi
