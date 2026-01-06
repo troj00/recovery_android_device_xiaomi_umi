@@ -14,11 +14,11 @@
 # limitations under the License.
 #
 
-# Codename device
+# Codename
 PRODUCT_RELEASE_NAME := umi
 
-# Inherit common configs
-$(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
+# Core configs
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_minimal.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
 $(call inherit-product, vendor/twrp/config/common.mk)
 
@@ -30,7 +30,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_SHIPPING_API_LEVEL := 29
 PRODUCT_TARGET_VNDK_VERSION := 31
 
-# Soong namespaces
+# Namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(DEVICE_PATH)
 
@@ -45,20 +45,26 @@ PRODUCT_EXTRA_RECOVERY_KEYS += \
 TWRP_REQUIRED_MODULES += \
     miui_prebuilt \
     magisk_prebuilt
-# ===== PRODUCT IDENTITY (A11+) =====
 
+# ===============================
+# Android 11+ Product Identity
+# ===============================
+
+# System
 PRODUCT_SYSTEM_NAME := umi
 PRODUCT_SYSTEM_DEVICE := umi
 PRODUCT_SYSTEM_MODEL := Xiaomi Mi 10
 PRODUCT_SYSTEM_BRAND := Xiaomi
 PRODUCT_SYSTEM_MANUFACTURER := Xiaomi
 
+# Vendor
 PRODUCT_VENDOR_NAME := umi
 PRODUCT_VENDOR_DEVICE := umi
 PRODUCT_VENDOR_MODEL := Xiaomi Mi 10
 PRODUCT_VENDOR_BRAND := Xiaomi
 PRODUCT_VENDOR_MANUFACTURER := Xiaomi
 
+# ODM (важно для Qualcomm)
 PRODUCT_ODM_NAME := umi
 PRODUCT_ODM_DEVICE := umi
 PRODUCT_ODM_MODEL := Xiaomi Mi 10
