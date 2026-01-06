@@ -41,13 +41,24 @@ PRODUCT_EXTRA_RECOVERY_KEYS += \
     $(DEVICE_PATH)/security/magisk \
     $(DEVICE_PATH)/security/miui_releasekey
 
-# Overrides for build.prop (displayed in recovery)
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.product.device=umi \
-    ro.build.product=umi \
-    ro.product.model=Mi 10
-
 # TWRP required modules
 TWRP_REQUIRED_MODULES += \
     miui_prebuilt \
     magisk_prebuilt
+# ===== PRODUCT IDENTITY (A11+) =====
+
+PRODUCT_SYSTEM_NAME := umi
+PRODUCT_SYSTEM_DEVICE := umi
+PRODUCT_SYSTEM_MODEL := Xiaomi Mi 10
+PRODUCT_SYSTEM_BRAND := Xiaomi
+PRODUCT_SYSTEM_MANUFACTURER := Xiaomi
+
+PRODUCT_VENDOR_NAME := umi
+PRODUCT_VENDOR_DEVICE := umi
+PRODUCT_VENDOR_MODEL := Xiaomi Mi 10
+PRODUCT_VENDOR_BRAND := Xiaomi
+PRODUCT_VENDOR_MANUFACTURER := Xiaomi
+
+PRODUCT_ODM_NAME := umi
+PRODUCT_ODM_DEVICE := umi
+PRODUCT_ODM_MODEL := Xiaomi Mi 10
