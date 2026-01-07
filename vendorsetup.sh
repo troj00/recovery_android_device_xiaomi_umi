@@ -89,7 +89,7 @@ if [ -f $FOX_MANIFEST_ROOT/bootable/recovery/orangefox_defaults.go -a -f $FOX_MA
 		export OF_MAINTAINER="Alex_Troj"
 		export OF_HIDE_NOTCH=1
 		export OF_CLOCK_POS=0
-#		export OF_ALLOW_DISABLE_NAVBAR=1
+		export OF_ALLOW_DISABLE_NAVBAR=0
 		export OF_DONT_KEEP_LOG_HISTORY=0
 		export OF_SKIP_ORANGEFOX_PROCESS=0
 		export FOX_VANILLA_BUILD=0
